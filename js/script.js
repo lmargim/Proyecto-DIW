@@ -2,14 +2,6 @@
 
 inicio();
 
-/* BOTON NAV */
-document.getElementById("botonNav").addEventListener("click", botonNav);
-
-function botonNav() {
-    alert("No disponible")
-}
-/* BOTON NAV */
-
 /* FORMULARIO */ 
 let checkBoxSoloIda = document.getElementById("soloIda");
 let dateVuelta = document.getElementById("dateVuelta");
@@ -78,3 +70,4 @@ function inicio() {
         offcanvasEl.classList.remove("show"); // Show es la clase que obscurece el body
     }
 };
+

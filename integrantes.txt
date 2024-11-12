@@ -1,3 +1,12 @@
+Integrantes
+----------------------------------------------------------------
 Luis Martín Gimeno
 Pablo Suero Esteban
 Roberto Sánchez Gilibert
+
+Reparto de menús
+----------------------------------------------------------------
+Menu Viajes -> Pablo
+Menu Paquetes -> Roberto
+Menu Clientes -> Luis
+

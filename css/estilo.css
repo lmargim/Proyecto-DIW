@@ -48,32 +48,65 @@ h1 h2 h3 h4 h5 h6 {
     line-height: 1.5;
     color: #333;
 }
+
 /* FUENTES */
 
 /* ANIMACIONES */
 @keyframes izq-derecha {
-    from {transform: translateX(-100%); opacity: 0%;}
-    to {transform: translateX(0); opacity: 100%;}
+    from {
+        transform: translateX(-100%);
+        opacity: 0%;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 100%;
+    }
 }
 
 @keyframes derecha-izq {
-    from {transform: translateX(100%); opacity: 0;}
-    to {transform: translateX(0); opacity: 100%;}
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 100%;
+    }
 }
 
 @keyframes appFormulario {
-    from {top: 80%; opacity: 0%;}
-    to {top: 50%;}
+    from {
+        top: 80%;
+        opacity: 0%;
+    }
+
+    to {
+        top: 50%;
+    }
 }
 
 @keyframes appOpacidad {
-    from {opacity: 0%;}
-    to {opacity: 100%;}
+    from {
+        opacity: 0%;
+    }
+
+    to {
+        opacity: 100%;
+    }
 }
 
 @keyframes navbarNav {
-    from {transform: translateY(-100%); opacity: 0;}
-    to {top: 0%; opacity: 100%;}
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    to {
+        top: 0%;
+        opacity: 100%;
+    }
 }
 
 /* ANIMACIONES */
@@ -110,6 +143,7 @@ h1 h2 h3 h4 h5 h6 {
     background-color: #28a745;
     border: none;
 }
+
 /* COOKIES */
 
 /* TOAST */
@@ -161,6 +195,7 @@ nav #botonNav {
     margin: 0.25rem 0;
 }
 
+
 /* NAVBAR */
 
 /* PARA AUMENTAR TAMAÑO Y COLOR DE LAS FLECHAS DEL CARRUSEL */
@@ -173,36 +208,48 @@ nav #botonNav {
 
 /* PARA AJUSTAR LAS IMAGENES DEL CARRUSEN CENTRAL */
 .carousel-inner img {
-    max-height: 800px; /* altura máxima de la foto */
-    width: 100%; /* ancho completo del contenedor */
-    object-fit: cover; /* las imágenes se ajusten sin distorsión */
-    position: relative; /* se posicione correctamente dentro de ese contenedor */
+    max-height: 800px;
+    /* altura máxima de la foto */
+    width: 100%;
+    /* ancho completo del contenedor */
+    object-fit: cover;
+    /* las imágenes se ajusten sin distorsión */
+    position: relative;
+    /* se posicione correctamente dentro de ese contenedor */
 }
-/* PARA AJUSTAR LAS IMAGENES DEL CARRUSEN CENTRAL */
+
 
 /* FORM */
 
 .floating-form {
     position: absolute;
-    top: 80%; /* centrado verticalmente */
-    left: 50%; /* centrado horizontalmente */
-    transform: translate(-50%, -50%); /* para centrar el formulario */
+    top: 80%;
+    /* centrado verticalmente */
+    left: 50%;
+    /* centrado horizontalmente */
+    transform: translate(-50%, -50%);
+    /* para centrar el formulario */
     background-color: rgba(255, 255, 255, 0.9);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
-    height: auto; /* auto para que la altura se ajuste al contenido */
+    height: auto;
+    /* auto para que la altura se ajuste al contenido */
     max-width: 800px;
     width: 90%;
-    overflow: hidden; /* evita que el contenido desborde */
+    overflow: hidden;
+    /* evita que el contenido desborde */
     animation: appFormulario 1s forwards;
 }
 
 .form-select#asiento {
     width: 100%;
-    background-color: transparent; /* elimina el fondo */
-    border: none; /* elimina el borde */
-    outline: none; /* elimina el contorno */
+    background-color: transparent;
+    /* elimina el fondo */
+    border: none;
+    /* elimina el borde */
+    outline: none;
+    /* elimina el contorno */
 }
 
 /* FORM */
@@ -230,7 +277,8 @@ nav #botonNav {
 
 .carousel-control-prev,
 .carousel-control-next {
-    width: 5%; /* Ajusta el ancho del área de clic si es necesario */
+    width: 5%;
+    /* Ajusta el ancho del área de clic si es necesario */
     display: flex;
 }
 
@@ -246,8 +294,10 @@ nav #botonNav {
 .uniform-img {
     width: 250px;
     height: 250px;
-    object-fit: cover; /* la imagen mantenga proporción y llene el contenedor */
+    object-fit: cover;
+    /* la imagen mantenga proporción y llene el contenedor */
 }
+
 /* SOBRE NOSOTROS */
 
 /* FOOTER */
@@ -274,6 +324,7 @@ footer {
 body {
     background-color: #FFDF78;
 }
+
 /* FOOTER */
 
 /* ######################################################################################################################################################################### */
@@ -282,19 +333,164 @@ body {
 .card {
     /* border: 2px solid #AC6600; */
     /* border-radius: 15px; */
-    overflow: hidden; /* para que no se desborde el contenido */
+    overflow: hidden;
+    /* para que no se desborde el contenido */
     background-color: #f8f9fa;
-    height: 100%; /* para que ocupe el 100% del contenedor padre*/
+    height: 100%;
+    /* para que ocupe el 100% del contenedor padre*/
 }
+
 .card-img-top {
     height: 400px;
-    object-fit: cover; /* la imagen mantenga proporción y llene el contenedor */
+    object-fit: cover;
+    /* la imagen mantenga proporción y llene el contenedor */
 }
+
 .textTitulo {
     background: linear-gradient(90deg, #FFA726 0%, #FFEB3B 100%);
 }
+
 /* CADS */
 
 .display-none {
     display: none;
+}
+
+/* ######################################################################################################################################################################### */
+
+fieldset {
+    border: 2px solid #ff8c42;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #fff4e6;
+    /* Esto da aspecto sombreado sobre el fieldset */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    /* Esto provoca que el cambio de sombreado tenga un tiempo de retardo */
+    transition: all 0.3s ease;
+}
+
+legend {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #495057;
+    text-align: center;
+    padding: 0 15px;
+    border-radius: 5px;
+    background-color: #ffe3c2;
+    border: 1px solid #ff8c42;
+    /* Esto da aspecto sombreado sobre el leyend */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Efecto hover en fieldset */
+fieldset:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    border-color: #ff8c42;
+}
+
+.btn-personalizado {
+    background-color: #ff7b2c;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 25px;
+}
+
+/* Efecto hover en el boton */
+.btn-personalizado:hover {
+    /* Damos un color mas oscuro */
+    background-color: #e66a23;
+    color: white;
+    /* También que se sombré de manera mas fuerte */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    /* Y por último que aumente ligeramente el tamaño */
+    transform: scale(1.05);
+}
+
+#frmViajes,
+#frmPaquetes,
+#frmClientes,
+#frmBuscarCliente,
+#frmListarPaquetesPorCliente {
+    display: none;
+}
+
+/* Estilo del contenedor de la tabla */
+.table-container {
+    border: 2px solid #ff8c42;
+    border-radius: 10px;
+    background-color: #fff4e6;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    overflow: hidden;
+    padding: 5px;
+    display: none;
+    transition: all 0.3s ease;
+}
+
+.table-container:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    border-color: #ff8c42;
+}
+
+/* Estilo de la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    transition: all 0.3s ease;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ff8c42;
+    color: #495057;
+}
+
+th {
+    font-size: 1.1em;
+    font-weight: 600;
+    background-color: #ffe3c2;
+    border-bottom: 2px solid #ff8c42;
+}
+
+.btn-person {
+    background-color: #ff7b2c;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Efecto hover en el botón de borrar */
+.btn-borrar:hover {
+    background-color: #e66a23;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+}
+
+/* Estilo general del modal */
+.modal-content {
+    border-radius: 10px;
+    border: 2px solid #FF6600; /* Color de borde naranja */
+    background-color: #FFF5E5; /* Fondo en tono crema */
+    padding: 10px;
+}
+
+/* Contenido del modal */
+.modal-body {
+    padding: 20px;
+}
+
+/* Campos del formulario */
+.modal-body .form-control {
+    border-radius: 5px;
+    border: 1px solid #FFB266; /* Borde de los campos */
+    background-color: #FFFFFF; /* Fondo blanco */
 }
