@@ -370,6 +370,7 @@ fieldset {
     transition: all 0.3s ease;
 }
 
+
 legend {
     font-size: 1.5em;
     font-weight: 600;
@@ -414,7 +415,8 @@ fieldset:hover {
 #frmPaquetes,
 #frmClientes,
 #frmBuscarCliente,
-#frmListarPaquetesPorCliente {
+#frmAñadirPaquetesACliente,
+#frmBuscarClienteParaPaquetes {
     display: none;
 }
 
@@ -493,4 +495,11 @@ th {
     border-radius: 5px;
     border: 1px solid #FFB266; /* Borde de los campos */
     background-color: #FFFFFF; /* Fondo blanco */
+}
+/* Esto es para que funcione el disabled ya que el css sobrescribe la propiedad */
+.modal-body .form-control:disabled {
+    background-color: #e9ecef;
+    color: #6c757d;
+    opacity: 1;
+    border-color: #FFB266;
 }

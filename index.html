@@ -95,9 +95,12 @@
                                     cliente</a></li>
                             <li><a class="dropdown-item merriweather-regular" id="mnuListarClientes" href="#">Listado de
                                     clientes</a></li>
-                            <!-- <li><a class="dropdown-item merriweather-regular" id="mnuListarPaquetesPorCliente"
+                            <li><a class="dropdown-item merriweather-regular" id="mnuAñadirPaquetesACliente"
+                                    href="#">Añadir paquetes a cliente</a>
+                            </li>
+                            <li><a class="dropdown-item merriweather-regular" id="mnuListarPaquetesPorCliente"
                                     href="#">Listar paquetes de un cliente</a>
-                            </li> -->
+                            </li>
                         </ul>
                     </li>
                 </ul>
@@ -113,6 +116,7 @@
         <form name="frmViajes" id="frmViajes">
             <fieldset id="form-viajes">
                 <legend>Añadir Viaje</legend>
+                <!-- ORIGEN Y DESTINO -->
                 <div class="row mb-3">
                     <div class="col-6">
                         <label for="txtOrigen" class="form-label">Origen</label>
@@ -124,7 +128,7 @@
                             placeholder="Nueva york">
                     </div>
                 </div>
-                <!-- Ida + Vuelta -->
+                <!-- IDA Y VUELTA -->
                 <div class="row mb-3">
                     <div class="col-6">
                         <label for="fechaInicio" class="form-label">Fecha de Inicio</label>
@@ -137,7 +141,8 @@
                 </div>
                 <!-- Botón de envío -->
                 <div class="text-center mt-4">
-                    <button type="submit" class="btn btn-personalizado"><i class="bi bi-plus"></i></button>
+                    <button type="submit" id="btnAñadirViaje" class="btn btn-personalizado"><i
+                            class="bi bi-plus"></i></button>
                 </div>
             </fieldset>
         </form>
@@ -195,22 +200,22 @@
                 <!-- Transporte Incluido -->
                 <div class="mb-3">
                     <label class="form-label">Transporte Incluido: </label>
-                    <input class="form-check-input" type="checkbox" id="transporteAereo" name="transporte[]"
-                        value="Aéreo">
+                    <input class="form-check-input" type="radio" id="transporteAereo" name="transporte" value="Aéreo">
                     <label class="form-check-label" for="transporteAereo">Aéreo</label>
 
-                    <input class="form-check-input" type="checkbox" id="transporteTerrestre" name="transporte[]"
+                    <input class="form-check-input" type="radio" id="transporteTerrestre" name="transporte"
                         value="Terrestre">
                     <label class="form-check-label" for="transporteTerrestre">Terrestre</label>
 
-                    <input class="form-check-input" type="checkbox" id="transporteMaritimo" name="transporte[]"
+                    <input class="form-check-input" type="radio" id="transporteMaritimo" name="transporte"
                         value="Marítimo">
                     <label class="form-check-label" for="transporteMaritimo">Marítimo</label>
 
                 </div>
                 <!-- Botón de envío -->
                 <div class="text-center mt-4">
-                    <button type="submit" class="btn btn-personalizado"><i class="bi bi-plus"></i></button>
+                    <button id="btnAñadirPaquete" type="submit" class="btn btn-personalizado"><i
+                            class="bi bi-plus"></i></button>
                 </div>
             </fieldset>
         </form>
@@ -307,21 +312,64 @@
     <!-- BUSCAR CLIENTE POR DNI -->
 
     <!-- LISTAR PAQUETES POR CLIENTE(DNI) -->
-    <!-- <div class="container mt-5">
-        <form name="frmListarPaquetesPorCliente" id="frmListarPaquetesPorCliente">
-            <fieldset id="form-viajes"> -->
-    <!-- DNI -->
-    <!-- <legend>Buscar paquetes de un cliente</legend>
-                <label for="txtdniPaquetesPorCliente" class="form-label">DNI</label>
-                <input type="text" class="form-control" id="txtdniPaquetesPorCliente" placeholder="12345678A" required> -->
-    <!-- Botón Añadir -->
-    <!-- <div class="text-center mt-4">
-                    <button type="button" id="btnBuscarPaquetesPorCliente" type="submit"
-                        class="btn btn-personalizado"><i class="bi bi-search"></i></button>
+    <!-- AÑADIR PAQUETES A UN CLIENTE -->
+    <div class="container mt-5">
+        <form name="frmAñadirPaquetesACliente" id="frmAñadirPaquetesACliente">
+            <fieldset id="form-viajes">
+                <legend>Seleccionar Cliente</legend>
+                <!-- DNI y NOMBRE  y BOTON BUSCAR-->
+                <div class="row">
+                    <!-- DNI -->
+                    <div class="col-lg-5">
+                        <label for="txtdniPaquetesPorCliente" class="form-label">DNI</label>
+                        <input type="text" class="form-control" id="txtdniañadirpaquetesacliente"
+                            placeholder="12345678A" required>
+                    </div>
+                    <!-- Nombre -->
+                    <div class="col-lg-5">
+                        <label for="txtnombrePaquetesPorCliente" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="txtnombreañadirpaquetesacliente" required
+                            disabled="disabled">
+                    </div>
+                    <!-- Botón Buscar -->
+                    <div class="col-lg-2 text-center mt-4">
+                        <button type="button" id="btnBuscarCliente" type="submit" class="btn btn-personalizado"><i
+                                class="bi bi-search"></i></button>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset id="datosPaquetes">
+                <legend>Seleccionar Paquete</legend>
+                <select class="form-select" name="lstPaquetes" id="lstPaquetes">
+                </select>
+                <!-- Botón Añadir Paquete a Cliente -->
+                <div class="text-center mt-4">
+                    <button type="button" id="btnAñadirPaqueteACliente" type="submit" class="btn btn-personalizado"><i
+                            class="bi bi-plus"></i></button>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+    <!-- AÑADIR PAQUETES A UN CLIENTE -->
+    <!-- BUSCAR CLIENTE PARA MOSTRAR PAQUETES -->
+    <div class="container mt-5">
+        <form name="frmBuscarClienteParaPaquetes" id="frmBuscarClienteParaPaquetes">
+            <fieldset>
+                <legend>Selecciona cliente para ver sus paquetes</legend>
+                <!-- DNI -->
+                <label for="txtdniBuscarClienteParaPaquetes" class="form-label">DNI</label>
+                <input type="text" class="form-control" id="txtdniBuscarClienteParaPaquetes" placeholder="12345678A"
+                    required>
+                <!-- Botón Añadir -->
+                <div class="text-center mt-4">
+                    <button id="btnBuscarClienteParaPaquetes" type="submit" class="btn btn-personalizado"><i
+                            class="bi bi-search"></i></button>
                 </div>
             </fieldset>
         </form>
-    </div> -->
+    </div>
+    <!-- BUSCAR CLIENTE PARA MOSTRAR PAQUETES -->
     <!-- LISTAR PAQUETES POR CLIENTE(DNI) -->
 
     <!-- MODIFICAR CLIENTE -->
@@ -330,13 +378,14 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
+                    <legend>Modificar cliente</legend>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="container mt-5">
                         <form name="frmModificarCliente" id="frmModificarCliente">
                             <fieldset id="form-ModificarCliente">
-                                <legend>Modificar cliente</legend>
+
                                 <!-- Nombre y DNI -->
                                 <div class="mb-3">
                                     <div class="row">
@@ -350,7 +399,7 @@
                                         <div class="col-lg-6">
                                             <label for="txtdniModificarCliente" class="form-label">DNI</label>
                                             <input type="text" class="form-control" id="txtdniModificarCliente"
-                                                placeholder="12345678A" readOnly="readOnly" required>
+                                                placeholder="12345678A" required disabled="disabled">
                                         </div>
                                     </div>
                                 </div>
