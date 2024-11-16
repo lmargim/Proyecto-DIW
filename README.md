@@ -8,6 +8,7 @@ En esta fase del proyecto, se han desarrollado las siguientes funcionalidades:
     - Listar clientes.
     - Buscar cliente por DNI.
     - Asignar paquetes a clientes.
+    - Listar paquetes de un cliente.
   
 - Gestión de Paquetes
     - Añadir paquetes.
